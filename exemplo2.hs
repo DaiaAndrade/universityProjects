@@ -16,3 +16,7 @@ somaArvore (Nodo n a1 a2) = n + somaArvore a1 + somaArvore a2
 arvoreLista :: Arvore -> [Int]
 arvoreLista (Folha n) = [n]
 arvoreLista (Nodo n a1 a2) = n : arvoreLista a1 ++ arvoreLista a2
+
+refleteArvore :: Arvore -> Arvore
+refleteArvore (Folha n) = Folha n
+refleteArvore (Nodo n a1 a2) = Nodo n (refleteArvore a2) (refleteArvore a1)
